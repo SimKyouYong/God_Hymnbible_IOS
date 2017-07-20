@@ -13,10 +13,9 @@
 		299540DD1E82462C00AA70DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299540DC1E82462C00AA70DE /* Assets.xcassets */; };
 		299540E01E82462C00AA70DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 299540DE1E82462C00AA70DE /* LaunchScreen.storyboard */; };
 		299540ED1E82469B00AA70DE /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 299540EC1E82469B00AA70DE /* MainVC.m */; };
-		299540F41E82477C00AA70DE /* DrawerNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 299540F01E82477C00AA70DE /* DrawerNavigation.m */; };
-		299540F51E82477C00AA70DE /* DrawerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 299540F21E82477C00AA70DE /* DrawerView.m */; };
-		299540F61E82477C00AA70DE /* DrawerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 299540F31E82477C00AA70DE /* DrawerView.xib */; };
 		299540FA1E82496000AA70DE /* GlobalObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 299540F91E82496000AA70DE /* GlobalObject.m */; };
+		FFCA2C861F20CA4F007FACD4 /* SongVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCA2C851F20CA4F007FACD4 /* SongVC.m */; };
+		FFCA2C8A1F20CECB007FACD4 /* AIMTableViewIndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCA2C891F20CECB007FACD4 /* AIMTableViewIndexBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,14 +29,13 @@
 		299540E11E82462C00AA70DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		299540EB1E82469B00AA70DE /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
 		299540EC1E82469B00AA70DE /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
-		299540EF1E82477C00AA70DE /* DrawerNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerNavigation.h; sourceTree = "<group>"; };
-		299540F01E82477C00AA70DE /* DrawerNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerNavigation.m; sourceTree = "<group>"; };
-		299540F11E82477C00AA70DE /* DrawerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerView.h; sourceTree = "<group>"; };
-		299540F21E82477C00AA70DE /* DrawerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerView.m; sourceTree = "<group>"; };
-		299540F31E82477C00AA70DE /* DrawerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawerView.xib; sourceTree = "<group>"; };
 		299540F71E82495100AA70DE /* GlobalHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalHeader.h; sourceTree = "<group>"; };
 		299540F81E82496000AA70DE /* GlobalObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalObject.h; sourceTree = "<group>"; };
 		299540F91E82496000AA70DE /* GlobalObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalObject.m; sourceTree = "<group>"; };
+		FFCA2C841F20CA4F007FACD4 /* SongVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongVC.h; sourceTree = "<group>"; };
+		FFCA2C851F20CA4F007FACD4 /* SongVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongVC.m; sourceTree = "<group>"; };
+		FFCA2C881F20CECB007FACD4 /* AIMTableViewIndexBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIMTableViewIndexBar.h; sourceTree = "<group>"; };
+		FFCA2C891F20CECB007FACD4 /* AIMTableViewIndexBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIMTableViewIndexBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +70,6 @@
 			children = (
 				299540EA1E82467B00AA70DE /* Lib */,
 				299540E71E82466A00AA70DE /* Common */,
-				299540EE1E82477C00AA70DE /* Menu */,
 				299540E91E82466A00AA70DE /* VC */,
 				299540D31E82462C00AA70DE /* AppDelegate.h */,
 				299540D41E82462C00AA70DE /* AppDelegate.m */,
@@ -116,6 +113,8 @@
 			children = (
 				299540EB1E82469B00AA70DE /* MainVC.h */,
 				299540EC1E82469B00AA70DE /* MainVC.m */,
+				FFCA2C841F20CA4F007FACD4 /* SongVC.h */,
+				FFCA2C851F20CA4F007FACD4 /* SongVC.m */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -123,20 +122,18 @@
 		299540EA1E82467B00AA70DE /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				FFCA2C871F20CECB007FACD4 /* TableIndexBar */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
 		};
-		299540EE1E82477C00AA70DE /* Menu */ = {
+		FFCA2C871F20CECB007FACD4 /* TableIndexBar */ = {
 			isa = PBXGroup;
 			children = (
-				299540EF1E82477C00AA70DE /* DrawerNavigation.h */,
-				299540F01E82477C00AA70DE /* DrawerNavigation.m */,
-				299540F11E82477C00AA70DE /* DrawerView.h */,
-				299540F21E82477C00AA70DE /* DrawerView.m */,
-				299540F31E82477C00AA70DE /* DrawerView.xib */,
+				FFCA2C881F20CECB007FACD4 /* AIMTableViewIndexBar.h */,
+				FFCA2C891F20CECB007FACD4 /* AIMTableViewIndexBar.m */,
 			);
-			path = Menu;
+			path = TableIndexBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,7 +197,6 @@
 				299540E01E82462C00AA70DE /* LaunchScreen.storyboard in Resources */,
 				299540DD1E82462C00AA70DE /* Assets.xcassets in Resources */,
 				299540DB1E82462C00AA70DE /* Main.storyboard in Resources */,
-				299540F61E82477C00AA70DE /* DrawerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,11 +207,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFCA2C8A1F20CECB007FACD4 /* AIMTableViewIndexBar.m in Sources */,
 				299540ED1E82469B00AA70DE /* MainVC.m in Sources */,
-				299540F51E82477C00AA70DE /* DrawerView.m in Sources */,
+				FFCA2C861F20CA4F007FACD4 /* SongVC.m in Sources */,
 				299540D51E82462C00AA70DE /* AppDelegate.m in Sources */,
 				299540FA1E82496000AA70DE /* GlobalObject.m in Sources */,
-				299540F41E82477C00AA70DE /* DrawerNavigation.m in Sources */,
 				299540D21E82462C00AA70DE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

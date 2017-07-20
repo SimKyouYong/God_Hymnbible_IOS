@@ -10,6 +10,4 @@
 
 @interface MainVC : UIViewController
 
-- (IBAction)menuButton:(id)sender;
-
 @end

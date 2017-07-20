@@ -7,18 +7,14 @@
 //
 
 #import "MainVC.h"
-#import "DrawerNavigation.h"
 
 @interface MainVC ()
-@property (strong, nonatomic) DrawerNavigation *rootNav;
 @end
 
 @implementation MainVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.rootNav = (DrawerNavigation *)self.navigationController;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,9 +24,5 @@
 
 #pragma mark -
 #pragma mark Button Action
-
-- (IBAction)menuButton:(id)sender {
-    [self.rootNav drawerToggle];
-}
 
 @end
