@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0820"
+   LastUpgradeVersion = "0830"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "29E961D91E76311C00DBE6EC"
-               BuildableName = "Bible.app"
-               BlueprintName = "Bible"
-               ReferencedContainer = "container:Bible.xcodeproj">
+               BlueprintIdentifier = "299540CC1E82462C00AA70DE"
+               BuildableName = "GodBible.app"
+               BlueprintName = "GodBible"
+               ReferencedContainer = "container:GodBible.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "29E961D91E76311C00DBE6EC"
-            BuildableName = "Bible.app"
-            BlueprintName = "Bible"
-            ReferencedContainer = "container:Bible.xcodeproj">
+            BlueprintIdentifier = "299540CC1E82462C00AA70DE"
+            BuildableName = "GodBible.app"
+            BlueprintName = "GodBible"
+            ReferencedContainer = "container:GodBible.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "29E961D91E76311C00DBE6EC"
-            BuildableName = "Bible.app"
-            BlueprintName = "Bible"
-            ReferencedContainer = "container:Bible.xcodeproj">
+            BlueprintIdentifier = "299540CC1E82462C00AA70DE"
+            BuildableName = "GodBible.app"
+            BlueprintName = "GodBible"
+            ReferencedContainer = "container:GodBible.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "29E961D91E76311C00DBE6EC"
-            BuildableName = "Bible.app"
-            BlueprintName = "Bible"
-            ReferencedContainer = "container:Bible.xcodeproj">
+            BlueprintIdentifier = "299540CC1E82462C00AA70DE"
+            BuildableName = "GodBible.app"
+            BlueprintName = "GodBible"
+            ReferencedContainer = "container:GodBible.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

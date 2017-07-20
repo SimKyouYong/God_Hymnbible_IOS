@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Bible.xcscheme</key>
+		<key>GodBible.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>29E961D91E76311C00DBE6EC</key>
+		<key>299540CC1E82462C00AA70DE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
