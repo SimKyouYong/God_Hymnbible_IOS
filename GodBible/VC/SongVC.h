@@ -11,7 +11,10 @@
 
 @interface SongVC : UIViewController<AIMTableViewIndexBarDelegate>{
     NSArray *sections;
-    NSArray *rows;
+    
+    NSMutableArray *dbArr;
+    
+    NSString *songImgPath;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *songTableView;

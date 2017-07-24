@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wDR-fF-hnE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wDR-fF-hnE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -142,7 +142,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vI0-3U-jcm">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vI0-3U-jcm">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -181,6 +181,7 @@
                             <constraint firstItem="vI0-3U-jcm" firstAttribute="leading" secondItem="28O-Mt-tfY" secondAttribute="leading" id="75Z-Tc-fCk"/>
                             <constraint firstAttribute="trailing" secondItem="NvA-4y-Fh3" secondAttribute="trailing" id="9wp-Fu-Vbi"/>
                             <constraint firstItem="vI0-3U-jcm" firstAttribute="top" secondItem="Lmz-qb-JIZ" secondAttribute="bottom" id="AgI-yE-t9P"/>
+                            <constraint firstAttribute="trailing" secondItem="vI0-3U-jcm" secondAttribute="trailing" id="LZk-Nx-mJ7"/>
                             <constraint firstItem="hqA-vt-QmX" firstAttribute="top" secondItem="evq-A7-N5U" secondAttribute="bottom" id="NBI-Ih-K3n"/>
                             <constraint firstItem="hqA-vt-QmX" firstAttribute="leading" secondItem="28O-Mt-tfY" secondAttribute="leading" id="Yhk-F5-RrA"/>
                             <constraint firstItem="poe-65-HD1" firstAttribute="top" secondItem="NvA-4y-Fh3" secondAttribute="bottom" id="cED-0h-TMH"/>
@@ -197,11 +198,74 @@
                     <connections>
                         <outlet property="indexBar" destination="NvA-4y-Fh3" id="pQE-GT-fsU"/>
                         <outlet property="songTableView" destination="hqA-vt-QmX" id="ZSd-UL-Tgr"/>
+                        <segue destination="IgK-tl-hTZ" kind="push" identifier="songDetail" id="9LY-4X-0rD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nvj-J3-ttw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="706" y="23"/>
+            <point key="canvasLocation" x="712" y="22"/>
+        </scene>
+        <!--Song DetailVC-->
+        <scene sceneID="8yD-S2-tml">
+            <objects>
+                <viewController restorationIdentifier="songDetailVC" storyboardIdentifier="songDetailVC" id="IgK-tl-hTZ" customClass="SongDetailVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HO3-OJ-YZK"/>
+                        <viewControllerLayoutGuide type="bottom" id="KHh-Wc-y9H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rNS-x1-JrU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="05n-zM-rqL">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ha7-04-J56"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gID-WU-5kA">
+                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="5dM-F8-IZ2"/>
+                                    <constraint firstAttribute="height" constant="60" id="PRP-8X-EE0"/>
+                                </constraints>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButton:" destination="IgK-tl-hTZ" eventType="touchUpInside" id="Ctp-4Z-5IO"/>
+                                </connections>
+                            </button>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F8j-P1-OXz">
+                                <rect key="frame" x="0.0" y="60" width="600" height="540"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="IgK-tl-hTZ" id="Dc3-vO-lla"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gID-WU-5kA" firstAttribute="leading" secondItem="rNS-x1-JrU" secondAttribute="leading" id="13I-sh-rin"/>
+                            <constraint firstItem="F8j-P1-OXz" firstAttribute="top" secondItem="gID-WU-5kA" secondAttribute="bottom" id="2rd-1z-Snb"/>
+                            <constraint firstItem="05n-zM-rqL" firstAttribute="leading" secondItem="rNS-x1-JrU" secondAttribute="leading" id="A7M-4f-6BX"/>
+                            <constraint firstItem="05n-zM-rqL" firstAttribute="top" secondItem="HO3-OJ-YZK" secondAttribute="bottom" id="FEo-fI-3C6"/>
+                            <constraint firstItem="F8j-P1-OXz" firstAttribute="leading" secondItem="rNS-x1-JrU" secondAttribute="leading" id="MaP-eN-AUS"/>
+                            <constraint firstItem="KHh-Wc-y9H" firstAttribute="top" secondItem="F8j-P1-OXz" secondAttribute="bottom" id="Y6Z-uc-r2U"/>
+                            <constraint firstAttribute="trailing" secondItem="05n-zM-rqL" secondAttribute="trailing" id="dnE-WI-fWf"/>
+                            <constraint firstAttribute="trailing" secondItem="F8j-P1-OXz" secondAttribute="trailing" id="slM-xy-ZMC"/>
+                            <constraint firstItem="gID-WU-5kA" firstAttribute="top" secondItem="HO3-OJ-YZK" secondAttribute="bottom" id="uu9-HN-vXb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="GqV-QN-asB"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="songWebView" destination="F8j-P1-OXz" id="kby-HQ-oRo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e2F-qg-VMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1827" y="22"/>
         </scene>
     </scenes>
 </document>

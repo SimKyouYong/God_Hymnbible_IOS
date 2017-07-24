@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (NSMutableArray *)selectSongName:(NSInteger)firstNum finishNum:(NSInteger)finishNum;
 
 @end
 

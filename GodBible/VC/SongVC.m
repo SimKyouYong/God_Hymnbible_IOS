@@ -7,6 +7,8 @@
 //
 
 #import "SongVC.h"
+#import "AppDelegate.h"
+#import "SongDetailVC.h"
 
 @interface SongVC ()
 
@@ -20,24 +22,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    id AppID = [[UIApplication sharedApplication] delegate];
+    
+    NSInteger firstValue = 1;
+    NSInteger finishValue = 50;
+    
+    dbArr = [[NSMutableArray alloc] init];
+    
+    for(int i=0; i<13; i++){
+        [dbArr addObject:[AppID selectSongName:firstValue finishNum:finishValue]];
+        
+        firstValue = firstValue + 50;
+        finishValue = finishValue + 50;
+    }
+    
     sections = @[@"1~50", @"51~100", @"101~150", @"151~200",
                  @"201~250", @"251~300", @"301~350", @"351~400",
                  @"401~450", @"451~500", @"501~550", @"551~600",
                  @"601~645"];
-    
-    rows = @[@[@"1장", @"2장", @"3장", @"4장", @"5장", @"6장"],
-             @[@"51장", @"52장", @"53장", @"54장", @"55장", @"56장"],
-             @[@"101장", @"2장", @"3장", @"4장", @"5장", @"6장"],
-             @[@"151장", @"2장", @"3장", @"4장", @"5장", @"6장"],
-             @[@"201장", @"2장", @"3장", @"4장", @"5장", @"6장"],
-             @[@"251장", @"2장", @"3장", @"4장", @"5장", @"6장"],
-             @[@"301장", @"2장", @"3장", @"4장", @"5장", @"6장"],
-             @[@"351장", @"2장", @"3장", @"4장", @"5장", @"6장"],
-             @[@"401장", @"2장", @"3장", @"4장", @"5장", @"6장"],
-             @[@"451장", @"2장", @"3장", @"4장", @"5장", @"6장"],
-             @[@"501장", @"2장", @"3장", @"4장", @"5장", @"6장"],
-             @[@"551장", @"2장", @"3장", @"4장", @"5장", @"6장"],
-             @[@"601장", @"602장", @"603장", @"604장", @"605장", @"606장"]];
     
     indexBar.delegate = self;
 }
@@ -51,15 +53,27 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark - UITableViewDelegate && UITableViewDataSource
+#pragma mark -
+#pragma mark Next VC
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"songDetail"])
+    {
+        SongDetailVC *vc = [segue destinationViewController];
+        vc.imgPath = songImgPath;;
+    }
+}
+
+#pragma mark -
+#pragma mark UITableViewDelegate && UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    [indexBar setIndexes:sections]; // to always have exact number of sections in table and indexBar
+    [indexBar setIndexes:sections];
     return [sections count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [rows[section] count];
+    return [dbArr[section] count];
 }
 
 - (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
@@ -72,14 +86,30 @@
     if (cell == nil){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
-    [cell.textLabel setText:rows[indexPath.section][indexPath.row]];
+    
+    NSDictionary *dic = [[dbArr objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    NSString *songNameDB = [NSString stringWithFormat:@"%@장 %@", [dic objectForKey:@"seq"], [dic objectForKey:@"title"]];
+    [cell.textLabel setText:songNameDB];
+    
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger resultSongName;
+    NSInteger sectionValue = indexPath.section * 50;
+    
+    resultSongName = sectionValue + indexPath.row + 1;
+    
+    songImgPath = [NSString stringWithFormat:@"%ld.JPG", resultSongName];
+    
+    [self performSegueWithIdentifier:@"songDetail" sender:nil];
 }
 
 #pragma mark - AIMTableViewIndexBarDelegate
 
 - (void)tableViewIndexBar:(AIMTableViewIndexBar *)indexBar didSelectSectionAtIndex:(NSInteger)index{
-    if ([songTableView numberOfSections] > index && index > -1){   // for safety, should always be YES
+    if ([songTableView numberOfSections] > index && index > -1){   
         [songTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:index]
                               atScrollPosition:UITableViewScrollPositionTop
                                       animated:YES];
