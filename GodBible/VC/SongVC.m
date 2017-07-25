@@ -101,7 +101,7 @@
     
     resultSongName = sectionValue + indexPath.row + 1;
     
-    songImgPath = [NSString stringWithFormat:@"%ld.JPG", resultSongName];
+    songImgPath = [NSString stringWithFormat:@"%03ld.JPG", resultSongName];
     
     [self performSegueWithIdentifier:@"songDetail" sender:nil];
 }

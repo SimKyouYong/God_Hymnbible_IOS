@@ -10,7 +10,7 @@
 
 @interface SongDetailVC : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIWebView *songWebView;
+@property (weak, nonatomic) IBOutlet UIImageView *songImageView;
 
 @property (nonatomic) NSString *imgPath;
 

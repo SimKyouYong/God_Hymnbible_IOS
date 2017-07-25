@@ -14,22 +14,21 @@
 
 @implementation SongDetailVC
 
-@synthesize songWebView;
-
+@synthesize songImageView;
 @synthesize imgPath;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    NSLog(@"%@", imgPath);
+    
+    songImageView.image = [UIImage imageNamed:imgPath];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)backButton:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

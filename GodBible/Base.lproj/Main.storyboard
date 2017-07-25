@@ -235,32 +235,28 @@
                                     <action selector="backButton:" destination="IgK-tl-hTZ" eventType="touchUpInside" id="Ctp-4Z-5IO"/>
                                 </connections>
                             </button>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F8j-P1-OXz">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0sq-V7-KR0">
                                 <rect key="frame" x="0.0" y="60" width="600" height="540"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="IgK-tl-hTZ" id="Dc3-vO-lla"/>
-                                </connections>
-                            </webView>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gID-WU-5kA" firstAttribute="leading" secondItem="rNS-x1-JrU" secondAttribute="leading" id="13I-sh-rin"/>
-                            <constraint firstItem="F8j-P1-OXz" firstAttribute="top" secondItem="gID-WU-5kA" secondAttribute="bottom" id="2rd-1z-Snb"/>
                             <constraint firstItem="05n-zM-rqL" firstAttribute="leading" secondItem="rNS-x1-JrU" secondAttribute="leading" id="A7M-4f-6BX"/>
                             <constraint firstItem="05n-zM-rqL" firstAttribute="top" secondItem="HO3-OJ-YZK" secondAttribute="bottom" id="FEo-fI-3C6"/>
-                            <constraint firstItem="F8j-P1-OXz" firstAttribute="leading" secondItem="rNS-x1-JrU" secondAttribute="leading" id="MaP-eN-AUS"/>
-                            <constraint firstItem="KHh-Wc-y9H" firstAttribute="top" secondItem="F8j-P1-OXz" secondAttribute="bottom" id="Y6Z-uc-r2U"/>
+                            <constraint firstItem="0sq-V7-KR0" firstAttribute="top" secondItem="gID-WU-5kA" secondAttribute="bottom" id="RV8-np-eSV"/>
                             <constraint firstAttribute="trailing" secondItem="05n-zM-rqL" secondAttribute="trailing" id="dnE-WI-fWf"/>
-                            <constraint firstAttribute="trailing" secondItem="F8j-P1-OXz" secondAttribute="trailing" id="slM-xy-ZMC"/>
+                            <constraint firstItem="KHh-Wc-y9H" firstAttribute="top" secondItem="0sq-V7-KR0" secondAttribute="bottom" id="eCN-cl-8vc"/>
                             <constraint firstItem="gID-WU-5kA" firstAttribute="top" secondItem="HO3-OJ-YZK" secondAttribute="bottom" id="uu9-HN-vXb"/>
+                            <constraint firstAttribute="trailing" secondItem="0sq-V7-KR0" secondAttribute="trailing" id="wA5-7a-fNm"/>
+                            <constraint firstItem="0sq-V7-KR0" firstAttribute="leading" secondItem="rNS-x1-JrU" secondAttribute="leading" id="wa0-k2-Sh0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GqV-QN-asB"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
-                        <outlet property="songWebView" destination="F8j-P1-OXz" id="kby-HQ-oRo"/>
+                        <outlet property="songImageView" destination="0sq-V7-KR0" id="pDf-HL-glp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2F-qg-VMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
