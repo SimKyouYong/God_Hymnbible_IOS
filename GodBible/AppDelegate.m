@@ -17,6 +17,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // 찬송가 DB
+    [self songDBInit];
+    
+    // 한글 말씀 DB
+    [self krBibleDBInit];
+    
+    // 영문 말씀 DB
+    [self enBibleDBInit];
+
+    return YES;
+}
+
+- (void)songDBInit{
     // 번들에 있는 DB 파일 도큐먼트에 저장
     NSArray *documentArr = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [documentArr objectAtIndex:0];
@@ -40,8 +53,58 @@
             NSLog(@"error : %@",[error localizedDescription]);
         }
     }
+}
 
-    return YES;
+- (void)krBibleDBInit{
+    // 번들에 있는 DB 파일 도큐먼트에 저장
+    NSArray *documentArr = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [documentArr objectAtIndex:0];
+    NSString *documentDBPath = [documentsDirectory stringByAppendingPathComponent:@"bible_kr.db"];
+    
+    NSFileManager *filemanager = [NSFileManager defaultManager];
+    
+    BOOL dbexists = [filemanager fileExistsAtPath:documentDBPath];
+    if (!dbexists) {
+        NSString *bundleDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"bible_kr.db"];
+        NSLog(@"bundle db %@",bundleDBPath);
+        //번들, 개발자가 직접 만든 sqlite 파일의 위치
+        NSLog(@"docu db %@", documentDBPath);
+        //sqlite 파일이 복사될 도쿠먼트의 위치
+        
+        NSError *error;
+        BOOL success = [filemanager copyItemAtPath:bundleDBPath toPath:documentDBPath error:&error];
+        //파일을 복사하는 부분
+        
+        if (!success) {
+            NSLog(@"error : %@",[error localizedDescription]);
+        }
+    }
+}
+
+- (void)enBibleDBInit{
+    // 번들에 있는 DB 파일 도큐먼트에 저장
+    NSArray *documentArr = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [documentArr objectAtIndex:0];
+    NSString *documentDBPath = [documentsDirectory stringByAppendingPathComponent:@"bible_eng.db"];
+    
+    NSFileManager *filemanager = [NSFileManager defaultManager];
+    
+    BOOL dbexists = [filemanager fileExistsAtPath:documentDBPath];
+    if (!dbexists) {
+        NSString *bundleDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"bible_eng.db"];
+        NSLog(@"bundle db %@",bundleDBPath);
+        //번들, 개발자가 직접 만든 sqlite 파일의 위치
+        NSLog(@"docu db %@", documentDBPath);
+        //sqlite 파일이 복사될 도쿠먼트의 위치
+        
+        NSError *error;
+        BOOL success = [filemanager copyItemAtPath:bundleDBPath toPath:documentDBPath error:&error];
+        //파일을 복사하는 부분
+        
+        if (!success) {
+            NSLog(@"error : %@",[error localizedDescription]);
+        }
+    }
 }
 
 #pragma mark -

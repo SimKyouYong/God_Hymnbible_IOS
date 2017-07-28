@@ -664,6 +664,9 @@
 		299540FA1E82496000AA70DE /* GlobalObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 299540F91E82496000AA70DE /* GlobalObject.m */; };
 		FFCA2C861F20CA4F007FACD4 /* SongVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCA2C851F20CA4F007FACD4 /* SongVC.m */; };
 		FFCA2C8A1F20CECB007FACD4 /* AIMTableViewIndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCA2C891F20CECB007FACD4 /* AIMTableViewIndexBar.m */; };
+		FFE6E94C1F2B8B1C00FD85A8 /* bible_cha.db in Resources */ = {isa = PBXBuildFile; fileRef = FFE6E9491F2B8B1C00FD85A8 /* bible_cha.db */; };
+		FFE6E94D1F2B8B1C00FD85A8 /* bible_eng.db in Resources */ = {isa = PBXBuildFile; fileRef = FFE6E94A1F2B8B1C00FD85A8 /* bible_eng.db */; };
+		FFE6E94E1F2B8B1C00FD85A8 /* bible_kr.db in Resources */ = {isa = PBXBuildFile; fileRef = FFE6E94B1F2B8B1C00FD85A8 /* bible_kr.db */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1333,6 +1336,9 @@
 		FFCA2C851F20CA4F007FACD4 /* SongVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongVC.m; sourceTree = "<group>"; };
 		FFCA2C881F20CECB007FACD4 /* AIMTableViewIndexBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIMTableViewIndexBar.h; sourceTree = "<group>"; };
 		FFCA2C891F20CECB007FACD4 /* AIMTableViewIndexBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIMTableViewIndexBar.m; sourceTree = "<group>"; };
+		FFE6E9491F2B8B1C00FD85A8 /* bible_cha.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = bible_cha.db; sourceTree = "<group>"; };
+		FFE6E94A1F2B8B1C00FD85A8 /* bible_eng.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = bible_eng.db; sourceTree = "<group>"; };
+		FFE6E94B1F2B8B1C00FD85A8 /* bible_kr.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = bible_kr.db; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2084,6 +2090,7 @@
 		299540EA1E82467B00AA70DE /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				FFE6E9481F2B8B1C00FD85A8 /* Bible DB */,
 				2970AC661F25B7DC0076D134 /* Song */,
 				FFCA2C871F20CECB007FACD4 /* TableIndexBar */,
 			);
@@ -2097,6 +2104,16 @@
 				FFCA2C891F20CECB007FACD4 /* AIMTableViewIndexBar.m */,
 			);
 			path = TableIndexBar;
+			sourceTree = "<group>";
+		};
+		FFE6E9481F2B8B1C00FD85A8 /* Bible DB */ = {
+			isa = PBXGroup;
+			children = (
+				FFE6E9491F2B8B1C00FD85A8 /* bible_cha.db */,
+				FFE6E94A1F2B8B1C00FD85A8 /* bible_eng.db */,
+				FFE6E94B1F2B8B1C00FD85A8 /* bible_kr.db */,
+			);
+			path = "Bible DB";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2182,6 +2199,7 @@
 				2970AF8C1F25B7DE0076D134 /* 160.JPG in Resources */,
 				2970B16F1F25B7DE0076D134 /* 643.JPG in Resources */,
 				2970AFEF1F25B7DE0076D134 /* 259.JPG in Resources */,
+				FFE6E94E1F2B8B1C00FD85A8 /* bible_kr.db in Resources */,
 				2970B0A51F25B7DE0076D134 /* 441.JPG in Resources */,
 				2970B0DD1F25B7DE0076D134 /* 497.JPG in Resources */,
 				2970B0B01F25B7DE0076D134 /* 452.JPG in Resources */,
@@ -2286,6 +2304,7 @@
 				2970AFD21F25B7DE0076D134 /* 230.JPG in Resources */,
 				2970B1141F25B7DE0076D134 /* 552.JPG in Resources */,
 				2970B12A1F25B7DE0076D134 /* 574.JPG in Resources */,
+				FFE6E94C1F2B8B1C00FD85A8 /* bible_cha.db in Resources */,
 				2970B0901F25B7DE0076D134 /* 420.JPG in Resources */,
 				2970B08B1F25B7DE0076D134 /* 415.JPG in Resources */,
 				2970AF101F25B7DE0076D134 /* 036.JPG in Resources */,
@@ -2384,6 +2403,7 @@
 				2970AF781F25B7DE0076D134 /* 140.JPG in Resources */,
 				2970AF8E1F25B7DE0076D134 /* 162.JPG in Resources */,
 				2970B0F21F25B7DE0076D134 /* 518.JPG in Resources */,
+				FFE6E94D1F2B8B1C00FD85A8 /* bible_eng.db in Resources */,
 				2970AF451F25B7DE0076D134 /* 089.JPG in Resources */,
 				2970AF471F25B7DE0076D134 /* 091.JPG in Resources */,
 				2970B0D41F25B7DE0076D134 /* 488.JPG in Resources */,
