@@ -662,6 +662,8 @@
 		299540E01E82462C00AA70DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 299540DE1E82462C00AA70DE /* LaunchScreen.storyboard */; };
 		299540ED1E82469B00AA70DE /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 299540EC1E82469B00AA70DE /* MainVC.m */; };
 		299540FA1E82496000AA70DE /* GlobalObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 299540F91E82496000AA70DE /* GlobalObject.m */; };
+		FFC05FFB1F2DE97200D54D80 /* WordsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC05FFA1F2DE97200D54D80 /* WordsVC.m */; };
+		FFC05FFE1F2DEF3900D54D80 /* WordTitleCount.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC05FFD1F2DEF3900D54D80 /* WordTitleCount.m */; };
 		FFCA2C861F20CA4F007FACD4 /* SongVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCA2C851F20CA4F007FACD4 /* SongVC.m */; };
 		FFCA2C8A1F20CECB007FACD4 /* AIMTableViewIndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCA2C891F20CECB007FACD4 /* AIMTableViewIndexBar.m */; };
 		FFE6E94C1F2B8B1C00FD85A8 /* bible_cha.db in Resources */ = {isa = PBXBuildFile; fileRef = FFE6E9491F2B8B1C00FD85A8 /* bible_cha.db */; };
@@ -1332,6 +1334,10 @@
 		299540F71E82495100AA70DE /* GlobalHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalHeader.h; sourceTree = "<group>"; };
 		299540F81E82496000AA70DE /* GlobalObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalObject.h; sourceTree = "<group>"; };
 		299540F91E82496000AA70DE /* GlobalObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalObject.m; sourceTree = "<group>"; };
+		FFC05FF91F2DE97200D54D80 /* WordsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsVC.h; sourceTree = "<group>"; };
+		FFC05FFA1F2DE97200D54D80 /* WordsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsVC.m; sourceTree = "<group>"; };
+		FFC05FFC1F2DEF3900D54D80 /* WordTitleCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordTitleCount.h; sourceTree = "<group>"; };
+		FFC05FFD1F2DEF3900D54D80 /* WordTitleCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordTitleCount.m; sourceTree = "<group>"; };
 		FFCA2C841F20CA4F007FACD4 /* SongVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongVC.h; sourceTree = "<group>"; };
 		FFCA2C851F20CA4F007FACD4 /* SongVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongVC.m; sourceTree = "<group>"; };
 		FFCA2C881F20CECB007FACD4 /* AIMTableViewIndexBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIMTableViewIndexBar.h; sourceTree = "<group>"; };
@@ -2063,6 +2069,8 @@
 				299540F71E82495100AA70DE /* GlobalHeader.h */,
 				299540F81E82496000AA70DE /* GlobalObject.h */,
 				299540F91E82496000AA70DE /* GlobalObject.m */,
+				FFC05FFC1F2DEF3900D54D80 /* WordTitleCount.h */,
+				FFC05FFD1F2DEF3900D54D80 /* WordTitleCount.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -2079,6 +2087,8 @@
 			children = (
 				299540EB1E82469B00AA70DE /* MainVC.h */,
 				299540EC1E82469B00AA70DE /* MainVC.m */,
+				FFC05FF91F2DE97200D54D80 /* WordsVC.h */,
+				FFC05FFA1F2DE97200D54D80 /* WordsVC.m */,
 				FFCA2C841F20CA4F007FACD4 /* SongVC.h */,
 				FFCA2C851F20CA4F007FACD4 /* SongVC.m */,
 				2970B1761F25C6410076D134 /* SongDetailVC.h */,
@@ -2840,6 +2850,8 @@
 				FFCA2C8A1F20CECB007FACD4 /* AIMTableViewIndexBar.m in Sources */,
 				299540ED1E82469B00AA70DE /* MainVC.m in Sources */,
 				FFCA2C861F20CA4F007FACD4 /* SongVC.m in Sources */,
+				FFC05FFE1F2DEF3900D54D80 /* WordTitleCount.m in Sources */,
+				FFC05FFB1F2DE97200D54D80 /* WordsVC.m in Sources */,
 				299540D51E82462C00AA70DE /* AppDelegate.m in Sources */,
 				299540FA1E82496000AA70DE /* GlobalObject.m in Sources */,
 				299540D21E82462C00AA70DE /* main.m in Sources */,
