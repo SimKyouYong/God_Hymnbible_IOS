@@ -42,7 +42,7 @@
     if ([[segue identifier] isEqualToString:@"wordsDetail"])
     {
         WordsDetailVC *vc = [segue destinationViewController];
-        vc.wordName = wordTitleNum;
+        vc.wordName = wordTitleNum + 1;
         vc.wordNumber = wordCountNum;
     }
 }

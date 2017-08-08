@@ -27,7 +27,7 @@
     wordArr = [[NSMutableArray alloc] init];
     id AppID = [[UIApplication sharedApplication] delegate];
     
-    NSString *nameValue = [NSString stringWithFormat:@"%ld", wordName + 1];
+    NSString *nameValue = [NSString stringWithFormat:@"%ld", wordName];
     NSString *numberValue = [NSString stringWithFormat:@"%ld", wordNumber];
     wordArr = [AppID selectBibleName:nameValue bibleNumer:numberValue];
 }
