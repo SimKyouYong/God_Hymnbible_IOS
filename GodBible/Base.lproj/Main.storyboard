@@ -232,6 +232,7 @@
                         <outlet property="wordCountView" destination="ngN-3D-EQ8" id="aaq-R0-pGM"/>
                         <outlet property="wordTitleChooseView" destination="ofl-yp-xZN" id="ZDJ-eu-L7r"/>
                         <outlet property="wordTitleScrollView" destination="UQN-QJ-Fg8" id="cgA-Ag-g7p"/>
+                        <segue destination="vf6-bY-dCL" kind="push" identifier="wordsDetail" id="9Kh-c3-TFl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYa-bx-ZOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -370,6 +371,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2F-qg-VMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1827" y="22"/>
+        </scene>
+        <!--Words DetailVC-->
+        <scene sceneID="mz6-5d-bTM">
+            <objects>
+                <viewController restorationIdentifier="wordsDetailVC" storyboardIdentifier="wordsDetailVC" id="vf6-bY-dCL" customClass="WordsDetailVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="scp-Vk-dp0"/>
+                        <viewControllerLayoutGuide type="bottom" id="reA-lb-kqu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TVW-Xx-bBj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8c8-jD-2nr">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="QeA-Nd-2DE"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sdo-Au-Hy9">
+                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="MpG-AX-Fki"/>
+                                    <constraint firstAttribute="width" constant="60" id="zsp-33-hyH"/>
+                                </constraints>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButton:" destination="vf6-bY-dCL" eventType="touchUpInside" id="0RU-xJ-l0I"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dCA-TT-iLk">
+                                <rect key="frame" x="0.0" y="60" width="600" height="540"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vf6-bY-dCL" id="eSm-ts-Ak0"/>
+                                    <outlet property="delegate" destination="vf6-bY-dCL" id="86x-zj-bsU"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8c8-jD-2nr" secondAttribute="trailing" id="6jq-3c-KZj"/>
+                            <constraint firstItem="Sdo-Au-Hy9" firstAttribute="leading" secondItem="TVW-Xx-bBj" secondAttribute="leading" id="D0n-2J-N5Y"/>
+                            <constraint firstItem="dCA-TT-iLk" firstAttribute="top" secondItem="Sdo-Au-Hy9" secondAttribute="bottom" id="Rim-yb-KNr"/>
+                            <constraint firstItem="8c8-jD-2nr" firstAttribute="leading" secondItem="TVW-Xx-bBj" secondAttribute="leading" id="T8L-cY-4fZ"/>
+                            <constraint firstItem="8c8-jD-2nr" firstAttribute="top" secondItem="scp-Vk-dp0" secondAttribute="bottom" id="WoI-12-8G7"/>
+                            <constraint firstItem="Sdo-Au-Hy9" firstAttribute="top" secondItem="scp-Vk-dp0" secondAttribute="bottom" id="ZJy-4N-DPf"/>
+                            <constraint firstItem="reA-lb-kqu" firstAttribute="top" secondItem="dCA-TT-iLk" secondAttribute="bottom" id="cAB-ah-lln"/>
+                            <constraint firstItem="dCA-TT-iLk" firstAttribute="leading" secondItem="TVW-Xx-bBj" secondAttribute="leading" id="iAI-OD-dUv"/>
+                            <constraint firstAttribute="trailing" secondItem="dCA-TT-iLk" secondAttribute="trailing" id="pmk-vM-ZMU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ORl-Pk-w8r"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="wordsDetailTableView" destination="dCA-TT-iLk" id="DSt-IR-Y78"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cum-rr-g14" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1826" y="-650"/>
         </scene>
     </scenes>
 </document>

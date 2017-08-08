@@ -9,6 +9,7 @@
 #import "WordsVC.h"
 #import "GlobalHeader.h"
 #import "WordTitleCount.h"
+#import "WordsDetailVC.h"
 
 @interface WordsVC ()
 
@@ -32,6 +33,18 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark -
+#pragma mark Next VC
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"wordsDetail"])
+    {
+        WordsDetailVC *vc = [segue destinationViewController];
+        vc.wordName = wordTitleNum;
+        vc.wordNumber = wordCountNum;
+    }
 }
 
 #pragma mark -
@@ -106,8 +119,7 @@
 - (void)selectCountButton:(UIButton*)sender{
     wordCountNum = sender.tag;
     
-    NSLog(@"%ld", wordTitleNum);
-    NSLog(@"%ld", wordCountNum);
+    [self performSegueWithIdentifier:@"wordsDetail" sender:nil];
 }
 
 @end

@@ -24,7 +24,7 @@
     [self krBibleDBInit];
     
     // 영문 말씀 DB
-    [self enBibleDBInit];
+    //[self enBibleDBInit];
 
     return YES;
 }
@@ -41,9 +41,6 @@
     if (!dbexists) {
         NSString *bundleDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"song.db"];
         NSLog(@"bundle db %@",bundleDBPath);
-        //번들, 개발자가 직접 만든 sqlite 파일의 위치
-        NSLog(@"docu db %@", documentDBPath);
-        //sqlite 파일이 복사될 도쿠먼트의 위치
         
         NSError *error;
         BOOL success = [filemanager copyItemAtPath:bundleDBPath toPath:documentDBPath error:&error];
@@ -67,9 +64,6 @@
     if (!dbexists) {
         NSString *bundleDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"bible_kr.db"];
         NSLog(@"bundle db %@",bundleDBPath);
-        //번들, 개발자가 직접 만든 sqlite 파일의 위치
-        NSLog(@"docu db %@", documentDBPath);
-        //sqlite 파일이 복사될 도쿠먼트의 위치
         
         NSError *error;
         BOOL success = [filemanager copyItemAtPath:bundleDBPath toPath:documentDBPath error:&error];
@@ -93,9 +87,6 @@
     if (!dbexists) {
         NSString *bundleDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"bible_eng.db"];
         NSLog(@"bundle db %@",bundleDBPath);
-        //번들, 개발자가 직접 만든 sqlite 파일의 위치
-        NSLog(@"docu db %@", documentDBPath);
-        //sqlite 파일이 복사될 도쿠먼트의 위치
         
         NSError *error;
         BOOL success = [filemanager copyItemAtPath:bundleDBPath toPath:documentDBPath error:&error];
@@ -139,31 +130,54 @@
     return Result;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+// 성경 리스트
+- (NSMutableArray *)selectBibleName:(NSString*)bibleName bibleNumer:(NSString*)bibleNumber{
+    sqlite3 *database;
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"bible_kr.db"];
+    if (sqlite3_open([filePath UTF8String], &database) != SQLITE_OK) {
+        sqlite3_close(database);
+        NSLog(@"Error");
+        return nil;
+    }
+    
+    NSMutableArray *Result = [NSMutableArray array];
+    sqlite3_stmt *statement;
+    char *sql = "SELECT col_4, col_5 FROM nkrv WHERE col_2=? AND col_3=?";
+    
+    if (sqlite3_prepare_v2(database, sql, -1, &statement, NULL) == SQLITE_OK) {
+        sqlite3_bind_text(statement, 1, [bibleName UTF8String],  -1, SQLITE_TRANSIENT);
+        sqlite3_bind_text(statement, 2, [bibleNumber UTF8String],  -1, SQLITE_TRANSIENT);
+        
+        while (sqlite3_step(statement)==SQLITE_ROW) {
+            NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)],@"col_4",
+                                 [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 1)],@"col_5",
+                                 nil];
+            [Result addObject:dic];
+        }
+    }
+    return Result;
 }
 
+- (void)applicationWillResignActive:(UIApplication *)application {
+    
+}
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
 }
-
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    
 }
-
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
 }
-
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
 }
-
 
 @end
