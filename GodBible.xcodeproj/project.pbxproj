@@ -664,6 +664,7 @@
 		299540FA1E82496000AA70DE /* GlobalObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 299540F91E82496000AA70DE /* GlobalObject.m */; };
 		29A26DEC1F3988800052F5DF /* WordsDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A26DEB1F3988800052F5DF /* WordsDetailVC.m */; };
 		29A26DEF1F398A7E0052F5DF /* WordsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A26DEE1F398A7E0052F5DF /* WordsCell.m */; };
+		FF11D0971F3E926A0022484A /* OtherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF11D0961F3E926A0022484A /* OtherVC.m */; };
 		FFC05FFB1F2DE97200D54D80 /* WordsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC05FFA1F2DE97200D54D80 /* WordsVC.m */; };
 		FFC05FFE1F2DEF3900D54D80 /* WordTitleCount.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC05FFD1F2DEF3900D54D80 /* WordTitleCount.m */; };
 		FFCA2C861F20CA4F007FACD4 /* SongVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCA2C851F20CA4F007FACD4 /* SongVC.m */; };
@@ -1340,6 +1341,8 @@
 		29A26DEB1F3988800052F5DF /* WordsDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsDetailVC.m; sourceTree = "<group>"; };
 		29A26DED1F398A7E0052F5DF /* WordsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsCell.h; sourceTree = "<group>"; };
 		29A26DEE1F398A7E0052F5DF /* WordsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsCell.m; sourceTree = "<group>"; };
+		FF11D0951F3E926A0022484A /* OtherVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherVC.h; sourceTree = "<group>"; };
+		FF11D0961F3E926A0022484A /* OtherVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherVC.m; sourceTree = "<group>"; };
 		FFC05FF91F2DE97200D54D80 /* WordsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsVC.h; sourceTree = "<group>"; };
 		FFC05FFA1F2DE97200D54D80 /* WordsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsVC.m; sourceTree = "<group>"; };
 		FFC05FFC1F2DEF3900D54D80 /* WordTitleCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordTitleCount.h; sourceTree = "<group>"; };
@@ -2103,6 +2106,8 @@
 				FFCA2C851F20CA4F007FACD4 /* SongVC.m */,
 				2970B1761F25C6410076D134 /* SongDetailVC.h */,
 				2970B1771F25C6410076D134 /* SongDetailVC.m */,
+				FF11D0951F3E926A0022484A /* OtherVC.h */,
+				FF11D0961F3E926A0022484A /* OtherVC.m */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -2167,7 +2172,8 @@
 				TargetAttributes = {
 					299540CC1E82462C00AA70DE = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = R6GE24244T;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -2867,6 +2873,7 @@
 				299540D51E82462C00AA70DE /* AppDelegate.m in Sources */,
 				299540FA1E82496000AA70DE /* GlobalObject.m in Sources */,
 				299540D21E82462C00AA70DE /* main.m in Sources */,
+				FF11D0971F3E926A0022484A /* OtherVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2932,7 +2939,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2973,7 +2980,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -2984,11 +2991,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: JC1 CORPORATION";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: JC1 CORPORATION";
+				DEVELOPMENT_TEAM = R6GE24244T;
 				INFOPLIST_FILE = GodBible/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bible.GodBible;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.jcone.testbible;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "caf7f626-40fe-4813-8893-89103681fcca";
+				PROVISIONING_PROFILE_SPECIFIER = "Test iPhone";
 			};
 			name = Debug;
 		};
@@ -2996,11 +3008,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: JC1 CORPORATION";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: JC1 CORPORATION";
+				DEVELOPMENT_TEAM = R6GE24244T;
 				INFOPLIST_FILE = GodBible/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bible.GodBible;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.jcone.testbible;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "caf7f626-40fe-4813-8893-89103681fcca";
+				PROVISIONING_PROFILE_SPECIFIER = "Test iPhone";
 			};
 			name = Release;
 		};

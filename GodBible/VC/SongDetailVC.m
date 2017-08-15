@@ -15,6 +15,7 @@
 @implementation SongDetailVC
 
 @synthesize songImageView;
+@synthesize m_bannerView;
 @synthesize imgPath;
 
 - (void)viewDidLoad {

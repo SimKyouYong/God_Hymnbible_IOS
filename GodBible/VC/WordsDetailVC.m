@@ -18,6 +18,8 @@
 @implementation WordsDetailVC
 
 @synthesize wordsDetailTableView;
+@synthesize m_bannerView;
+@synthesize bibleTextName;
 @synthesize wordName;
 @synthesize wordNumber;
 
@@ -42,6 +44,12 @@
 
 - (IBAction)backButton:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)prevButton:(id)sender {
+}
+
+- (IBAction)nextButton:(id)sender {
 }
 
 #pragma mark -

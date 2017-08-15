@@ -11,6 +11,7 @@
 @interface SongDetailVC : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *songImageView;
+@property (weak, nonatomic) IBOutlet UIView *m_bannerView;
 
 @property (nonatomic) NSString *imgPath;
 

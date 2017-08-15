@@ -13,6 +13,8 @@
 
 @implementation MainVC
 
+@synthesize m_bannerView;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 }

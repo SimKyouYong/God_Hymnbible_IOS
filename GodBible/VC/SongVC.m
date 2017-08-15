@@ -18,6 +18,7 @@
 
 @synthesize songTableView;
 @synthesize indexBar;
+@synthesize m_bannerView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -14,7 +14,13 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *wordsDetailTableView;
 
+@property (weak, nonatomic) IBOutlet UIView *m_bannerView;
+
+@property (weak, nonatomic) IBOutlet UILabel *bibleTextName;
+
 - (IBAction)backButton:(id)sender;
+- (IBAction)prevButton:(id)sender;
+- (IBAction)nextButton:(id)sender;
 
 @property (nonatomic) NSInteger wordName;
 @property (nonatomic) NSInteger wordNumber;

@@ -10,4 +10,6 @@
 
 @interface MainVC : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *m_bannerView;
+
 @end

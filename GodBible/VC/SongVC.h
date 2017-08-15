@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *songTableView;
 @property (weak, nonatomic) IBOutlet AIMTableViewIndexBar *indexBar;
 
+@property (weak, nonatomic) IBOutlet UIView *m_bannerView;
+
 - (IBAction)backButton:(id)sender;
 
 @end
