@@ -26,17 +26,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self wordsListInit];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+- (void)wordsListInit{
     wordArr = [[NSMutableArray alloc] init];
     id AppID = [[UIApplication sharedApplication] delegate];
     
     NSString *nameValue = [NSString stringWithFormat:@"%ld", wordName];
     NSString *numberValue = [NSString stringWithFormat:@"%ld", wordNumber];
     wordArr = [AppID selectBibleName:nameValue bibleNumer:numberValue];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    NSMutableArray *countNumArr = [[NSMutableArray alloc] init];
+    countNumArr = [AppID selectBibleCount:nameValue];
+    bibleWordCountNum = [countNumArr count];
+    
+    [wordsDetailTableView reloadData];
 }
 
 #pragma mark -
@@ -47,9 +56,39 @@
 }
 
 - (IBAction)prevButton:(id)sender {
+    if(wordName == 1){
+        if(wordNumber == 1){
+            return;
+        }else{
+            wordNumber--;
+            [self wordsListInit];
+        }
+    }else{
+        if(wordNumber == 1){
+            wordName--;
+            
+            id AppID = [[UIApplication sharedApplication] delegate];
+            NSMutableArray *countNumArr = [[NSMutableArray alloc] init];
+            NSString *nameValue = [NSString stringWithFormat:@"%ld", wordName];
+            countNumArr = [AppID selectBibleCount:nameValue];
+            wordNumber = [countNumArr count];
+        }else{
+            wordNumber--;
+        }
+        
+        [self wordsListInit];
+    }
 }
 
 - (IBAction)nextButton:(id)sender {
+    if(bibleWordCountNum == wordNumber){
+        wordName++;
+        wordNumber = 1;
+    }else{
+        wordNumber++;
+    }
+    
+    [self wordsListInit];
 }
 
 #pragma mark -

@@ -160,6 +160,34 @@
     return Result;
 }
 
+// 선택한 성경 장수
+- (NSMutableArray *)selectBibleCount:(NSString*)bibleCount{
+    sqlite3 *database;
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"bible_kr.db"];
+    if (sqlite3_open([filePath UTF8String], &database) != SQLITE_OK) {
+        sqlite3_close(database);
+        NSLog(@"Error");
+        return nil;
+    }
+    
+    NSMutableArray *Result = [NSMutableArray array];
+    sqlite3_stmt *statement;
+    char *sql = "SELECT DISTINCT col_3 FROM nkrv WHERE col_2=?";
+    
+    if (sqlite3_prepare_v2(database, sql, -1, &statement, NULL) == SQLITE_OK) {
+        sqlite3_bind_text(statement, 1, [bibleCount UTF8String],  -1, SQLITE_TRANSIENT);
+        
+        while (sqlite3_step(statement)==SQLITE_ROW) {
+            NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)],@"col_3",
+                                 nil];
+            [Result addObject:dic];
+        }
+    }
+    return Result;
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     
 }

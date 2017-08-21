@@ -14,6 +14,7 @@
 
 - (NSMutableArray *)selectSongName:(NSInteger)firstNum finishNum:(NSInteger)finishNum;
 - (NSMutableArray *)selectBibleName:(NSString*)bibleName bibleNumer:(NSString*)bibleNumber;
+- (NSMutableArray *)selectBibleCount:(NSString*)bibleCount;
 
 @end
 

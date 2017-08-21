@@ -655,6 +655,7 @@
 		2970B1721F25B7DE0076D134 /* song.db in Resources */ = {isa = PBXBuildFile; fileRef = 2970AEEC1F25B7DE0076D134 /* song.db */; };
 		2970B1751F25B9920076D134 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2970B1741F25B9920076D134 /* libsqlite3.0.tbd */; };
 		2970B1781F25C6410076D134 /* SongDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2970B1771F25C6410076D134 /* SongDetailVC.m */; };
+		2990B9E01F4A9A6700413915 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2990B9DF1F4A9A6700413915 /* SettingVC.m */; };
 		299540D21E82462C00AA70DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 299540D11E82462C00AA70DE /* main.m */; };
 		299540D51E82462C00AA70DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 299540D41E82462C00AA70DE /* AppDelegate.m */; };
 		299540DB1E82462C00AA70DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 299540D91E82462C00AA70DE /* Main.storyboard */; };
@@ -1324,6 +1325,8 @@
 		2970B1741F25B9920076D134 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		2970B1761F25C6410076D134 /* SongDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongDetailVC.h; sourceTree = "<group>"; };
 		2970B1771F25C6410076D134 /* SongDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongDetailVC.m; sourceTree = "<group>"; };
+		2990B9DE1F4A9A6700413915 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
+		2990B9DF1F4A9A6700413915 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
 		299540CD1E82462C00AA70DE /* GodBible.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GodBible.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		299540D11E82462C00AA70DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		299540D31E82462C00AA70DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -2108,6 +2111,8 @@
 				2970B1771F25C6410076D134 /* SongDetailVC.m */,
 				FF11D0951F3E926A0022484A /* OtherVC.h */,
 				FF11D0961F3E926A0022484A /* OtherVC.m */,
+				2990B9DE1F4A9A6700413915 /* SettingVC.h */,
+				2990B9DF1F4A9A6700413915 /* SettingVC.m */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -2863,6 +2868,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29A26DEF1F398A7E0052F5DF /* WordsCell.m in Sources */,
+				2990B9E01F4A9A6700413915 /* SettingVC.m in Sources */,
 				2970B1781F25C6410076D134 /* SongDetailVC.m in Sources */,
 				FFCA2C8A1F20CECB007FACD4 /* AIMTableViewIndexBar.m in Sources */,
 				299540ED1E82469B00AA70DE /* MainVC.m in Sources */,

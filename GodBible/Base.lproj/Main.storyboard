@@ -98,12 +98,15 @@
                                     <segue destination="vyh-C3-gbf" kind="push" identifier="other" id="FcK-M8-gMI"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaK-dn-yaT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaK-dn-yaT">
                                 <rect key="frame" x="0.0" y="350" width="600" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="UbC-mK-mSv"/>
                                 </constraints>
                                 <state key="normal" title="Setting"/>
+                                <connections>
+                                    <segue destination="f7g-cB-AZz" kind="push" identifier="setting" id="00T-AI-mDO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -434,6 +437,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rg6-o0-h9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="738" y="669"/>
+        </scene>
+        <!--SettingVC-->
+        <scene sceneID="Yen-OR-hPM">
+            <objects>
+                <viewController restorationIdentifier="settingVC" storyboardIdentifier="settingVC" id="f7g-cB-AZz" customClass="SettingVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4qM-Z5-Qbo"/>
+                        <viewControllerLayoutGuide type="bottom" id="81y-iT-sjm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q6M-ez-Ont">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o6m-En-Cr5">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="HFx-5K-OpS"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TE-Yf-7oY">
+                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="GHq-08-aO3"/>
+                                    <constraint firstAttribute="width" constant="60" id="b6B-go-SdW"/>
+                                </constraints>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backAction:" destination="f7g-cB-AZz" eventType="touchUpInside" id="Du4-Tt-cbF"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MW0-EH-myW">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="PLw-ug-hvt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o6m-En-Cr5" firstAttribute="leading" secondItem="q6M-ez-Ont" secondAttribute="leading" id="9VR-gP-4bx"/>
+                            <constraint firstAttribute="trailing" secondItem="MW0-EH-myW" secondAttribute="trailing" id="Abg-09-hFG"/>
+                            <constraint firstAttribute="trailing" secondItem="o6m-En-Cr5" secondAttribute="trailing" id="Ers-ZX-ewh"/>
+                            <constraint firstItem="3TE-Yf-7oY" firstAttribute="top" secondItem="4qM-Z5-Qbo" secondAttribute="bottom" id="G4e-eq-sZP"/>
+                            <constraint firstItem="81y-iT-sjm" firstAttribute="top" secondItem="MW0-EH-myW" secondAttribute="bottom" id="H55-Ah-Aey"/>
+                            <constraint firstItem="o6m-En-Cr5" firstAttribute="top" secondItem="4qM-Z5-Qbo" secondAttribute="bottom" id="bEU-dE-Zeh"/>
+                            <constraint firstItem="MW0-EH-myW" firstAttribute="leading" secondItem="q6M-ez-Ont" secondAttribute="leading" id="fGe-in-Puk"/>
+                            <constraint firstItem="3TE-Yf-7oY" firstAttribute="leading" secondItem="q6M-ez-Ont" secondAttribute="leading" id="oRc-gZ-FhX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="73L-XR-8cW"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="m_bannerVIew" destination="MW0-EH-myW" id="Zzf-gE-eac"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="15e-dD-rJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="738" y="1300"/>
         </scene>
         <!--Song DetailVC-->
         <scene sceneID="8yD-S2-tml">

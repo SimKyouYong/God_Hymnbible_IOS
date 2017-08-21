@@ -10,6 +10,8 @@
 
 @interface WordsDetailVC : UIViewController{
     NSMutableArray *wordArr;
+    
+    NSInteger bibleWordCountNum;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *wordsDetailTableView;
